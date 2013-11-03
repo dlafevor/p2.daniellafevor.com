@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
-	<link href="../css/master.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/css/master.css" rel="stylesheet" type="text/css" media="all">
 	</head>
 	
 	<body>

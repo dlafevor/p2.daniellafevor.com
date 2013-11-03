@@ -43,15 +43,19 @@ class users_controller extends base_controller {
 			# You should eventually make a proper View for this
 			echo "You're signed up";        
     }
-
-    public function login() {
-		 	# Setup view
-			$this->template->content = View::instance('v_users_login');
-			$this->template->title   = "Login to the Backyard Barker";
-
-    	# Render template
-      echo $this->template;
-    }
+		public function login($error = NULL) {
+		
+				# Set up the view
+				$this->template->content = View::instance("v_users_login");
+				$this->template->title   = "Login to the Backyard Barker";
+		
+				# Pass data to the view
+				$this->template->content->error = $error;
+		
+				# Render the view
+				echo $this->template;
+		
+		}
 		
 		public function p_login() {
 			# Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
@@ -70,26 +74,27 @@ class users_controller extends base_controller {
 			$token = DB::instance(DB_NAME)->select_field($q);
 
 			# If we didn't find a matching token in the database, it means login failed
+
+			# Login failed
 			if(!$token) {
-        # Send them back to the login page
-        Router::redirect("/users/login/");
-
-			# But if we did, login succeeded! 
-			} else {
-
-        /* 
-        Store this token in a cookie using setcookie()
-        Important Note: *Nothing* else can echo to the page before setcookie is called
-        Not even one single white space.
-        param 1 = name of the cookie
-        param 2 = the value of the cookie
-        param 3 = when to expire
-        param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
-        */
-        setcookie("token", $token, strtotime('+1 year'), '/');
-
-        # Send them to the main page - or whever you want them to go
-        Router::redirect("/");
+					# Note the addition of the parameter "error"
+					Router::redirect("/users/login/error"); 
+			}
+			# Login passed
+			else {
+					/* 
+					Store this token in a cookie using setcookie()
+					Important Note: *Nothing* else can echo to the page before setcookie is called
+					Not even one single white space.
+					param 1 = name of the cookie
+					param 2 = the value of the cookie
+					param 3 = when to expire
+					param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
+					*/
+					setcookie("token", $token, strtotime('+2 weeks'), '/');
+					
+					# Send them to the main page - or whever you want them to go
+					Router::redirect("/posts");
 			}
 		}
 		
@@ -112,13 +117,13 @@ class users_controller extends base_controller {
 			Router::redirect("/");
     }
 
-    public function profile($user_name = NULL) {
+    public function profile($email = NULL) {
 
-        if($user_name == NULL) {
+        if($email == NULL) {
             echo "No user specified";
         }
         else {
-            echo "This is the profile for ".$user_name;
+            echo "This is the profile for ".$user->email;
         }
     }
 

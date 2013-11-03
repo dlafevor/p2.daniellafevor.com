@@ -12,10 +12,12 @@ div.signupBody { width: 850px; margin: -351px auto 0 auto; z-index: 999; }
 form.signupBody { margin-top: 60px; float: right; }
 #titleIcon { margin-top: 0px; margin-left: 200px; }
 input.signupBody { width: 300px; border: none; border-radius: 5px; background-color: #ffffff; color: #979797; font-size: 1.1em; padding: 4px 4px 4px 4px; margin-bottom: 10px; display: block; }
-input.signupButton { color: #ffffff; background-color: #fe9200; border-radius: 5px; width: 300px; border: none; padding: 5px 5px 5px 5px; margin-top: 10px; font-size: 1.2em; }
+input.signupButton { color: #ffffff; background-color: #fe9200; border-radius: 5px; width: 308px; border: none; padding: 5px 5px 5px 5px; margin-top: 10px; font-size: 1.2em; }
 
 div.leftBar { width: 120px; float: left; margin-top: -60px; }
 img.headerLogo { margin-bottom: 10px; float:left; }
 
 div.welcomeBar { float: left; width: 115px; height: 325px; padding: 4px 18px 4px 18px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; color: #ffffff; background-color: #fe9200; text-align: center; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
 div.welcomeBar img { margin: 10px 6px 20px; }
+
+.error { color: #F20000; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; display: block; }
