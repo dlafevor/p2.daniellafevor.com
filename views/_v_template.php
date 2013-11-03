@@ -24,8 +24,28 @@
 				<?php endif; ?>
 			</div>
 		</div>
-		<?php if(isset($content)) echo $content; ?>
-	
-		<?php if(isset($client_files_body)) echo $client_files_body; ?>
+		<div class="signupBar"></div>
+		<div class="interiorBody">
+			<?php if(isset($content)) echo $content; ?>
+		
+			<?php if(isset($client_files_body)) echo $client_files_body; ?>
+			<?php if($user): ?>
+				<div class="leftBar">
+					<div class="controlBar">
+						<a href="/posts/myposts">Barkings</a>
+						<a href="/posts">My Pack's Barks</a>
+						<a href="">All Barks!</a>
+						<a href="/posts/users">Following</a>
+					</div>
+				</div>
+			<?php else: ?>
+				<div class="leftBar">
+					<div class="welcomeBar">
+						<img src="/images/welcome_header.png" width="103" height="30" alt="Welcome!">
+						Welcome to Backyard Barker. Get to know others, and keep up with what’s going on! So start barking!
+					</div>
+				</div>
+			<?php endif; ?>
+		</div>
 	</body>
 </html>

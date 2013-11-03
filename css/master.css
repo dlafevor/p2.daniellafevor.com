@@ -13,8 +13,8 @@ div.headerBar img { float: left; clear: right; }
 div.signupBar { position: relative; top: 100px; width: 100%; height: 326px; background-image: url(../images/paw_background.jpg); background-repeat: repeat-x; z-index: 0; }
 div.signupBody, div.interiorBody { position: relative; width: 900px; margin: -140px auto 0 auto; z-index: 999; }
 
-div.signupBody form { margin-top: -25px; float: right; }
-#titleIcon { margin-top: -110px; margin-left: 150px; }
+div.signupBody form { margin-top: -25px; margin-left: 125px; float: right; }
+#titleIcon { float: right; margin-top: -115px; }
 input.signupBody { width: 300px; border: none; border-radius: 5px; background-color: #ffffff; color: #979797; font-size: 1.1em; padding: 4px 4px 4px 4px; margin-bottom: 10px; display: block; }
 input.signupButton { color: #ffffff; background-color: #fe9200; border-radius: 5px; width: 308px; border: none; padding: 5px 5px 5px 5px; margin-top: 10px; font-size: 1.2em; }
 
@@ -28,7 +28,10 @@ div.controlBar a:link, div.controlBar a:visited { color: #fff; text-decoration: 
 .error { color: #F20000; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; display: block; }
 div.plusOnes { color: #fff; }
 
-div.thePack { background-color: #fff6e5; border-radius: 5px; width: 150px; float: right; margin-top: -50px; }
-div.followedPosts { float: right; left: 175px; width: 650px; border-radius: 5px; margin: -50px 5px 5px 5px; background-image: url(../images/25_percent_background.png); background-repeat: repeat; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 10px; }
+div.repeatedBodyContent { float: right; left: 175px; width: 650px; margin-top: -70px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 10px; }
+div.followedPosts { border-radius: 5px; background-image: url(../images/25_percent_background.png); background-repeat: repeat; padding: 5px 5px 5px 5px; margin-bottom: 10px; }
 p.postContent { margin: 0px; }
 p.dateTime { font-style: italic; text-align: right; }
+#newPostForm { padding: 6px;}
+#content { width: 500px; border-radius: 5px; padding: 3px 10px 3px 10px; }
+#newPost { background-color: #fe9200; color: #fff; border: none; border-radius: 5px; padding: 3px 20px 3px 20px; }

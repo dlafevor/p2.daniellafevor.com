@@ -19,9 +19,7 @@ class users_controller extends base_controller {
 				echo $this->template;
     }
 
-    // Added by Daniel Begin
 
-		// Added by Daniel End
 		public function p_signup() {
 
        # Dump out the results of POST to see what the form submitted
@@ -41,7 +39,7 @@ class users_controller extends base_controller {
 			
 			# For now, just confirm they've signed up - 
 			# You should eventually make a proper View for this
-			echo "You're signed up";        
+			Router::redirect("/users/login");       
     }
 		public function login($error = NULL) {
 		

@@ -12,7 +12,7 @@ class posts_controller extends base_controller {
     public function add() {
 
         # Setup view
-        $this->template->content = View::instance('v_posts_add');
+        $this->template->content = View::instance('v_posts_index');
         $this->template->title   = "New Post";
 
         # Render template
@@ -34,7 +34,7 @@ class posts_controller extends base_controller {
         DB::instance(DB_NAME)->insert('posts', $_POST);
 
         # Quick and dirty feedback
-        echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+        Router::redirect("/posts/myposts");
 
     }
 		public function index() {
@@ -66,8 +66,36 @@ class posts_controller extends base_controller {
 	
 			# Render the View
 			echo $this->template;
+		}
+	# Beg - Function for pulling back my posts
 	
-	}
+		public function myposts() {
+			# Set up the View
+			$this->template->content = View::instance('v_posts_myposts');
+			$this->template->title   = "My Posts";
+	
+			# Build the query
+			$q = 'SELECT 
+            posts.content,
+            posts.created,
+						users.first_name,
+            users.last_name, 
+						users.email
+        FROM posts
+				INNER JOIN users ON posts.user_id = users.user_id
+        WHERE posts.user_id = '.$this->user->user_id;
+	
+			# Run the query
+			$userposts = DB::instance(DB_NAME)->select_rows($q);
+	
+			# Pass data to the View
+			$this->template->content->myposts = $userposts;
+	
+			# Render the View
+			echo $this->template;
+		}
+	
+	# End - Function for pulling back my posts
 		public function users() {
 	
 			# Set up the View
