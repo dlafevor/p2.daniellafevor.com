@@ -12,7 +12,7 @@
 		<div class="headerBar">
 			<img src="/images/barker_logo.png" width="151" height="113" alt="The Backyard Barker" title="The Backyard Barker" class="headerLogo">
 			<div class="headerNav">
-				<a href='/users'>Home</a>
+				<a href='/posts'>Home</a>
 				<!-- Menu for users who are logged in -->
 				<?php if($user): ?>
 					<a href='/users/logout'>Logout</a>
@@ -34,7 +34,7 @@
 					<div class="controlBar">
 						<a href="/posts/myposts">Barkings</a>
 						<a href="/posts">My Pack's Barks</a>
-						<a href="">All Barks!</a>
+						<a href="/posts/allposts">All Barks!</a>
 						<a href="/posts/users">Following</a>
 					</div>
 				</div>

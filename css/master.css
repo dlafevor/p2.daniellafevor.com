@@ -25,6 +25,7 @@ div.welcomeBar { float: left; width: 115px; height: 325px; padding: 4px 18px 4px
 div.welcomeBar img { margin: 10px 6px 20px; }
 div.controlBar { float: left; width: 139px; border-radius: 5px; color: #ffffff; background-color: #fe9200; text-align: left; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 8px 6px 8px 6px; }
 div.controlBar a:link, div.controlBar a:visited { color: #fff; text-decoration: none; display: block; } 
+div.controlBar a:hover { background-color: #ffb44e; }
 .error { color: #F20000; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; display: block; }
 div.plusOnes { color: #fff; }
 

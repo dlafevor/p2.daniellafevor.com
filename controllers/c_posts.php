@@ -6,6 +6,7 @@ class posts_controller extends base_controller {
         # Make sure user is logged in if they want to use anything in this controller
         if(!$this->user) {
             die("Members only. <a href='/users/login'>Login</a>");
+					Router::redirect("/posts/users");
         }
     }
 
@@ -40,7 +41,7 @@ class posts_controller extends base_controller {
 		public function index() {
 			# Set up the View
 			$this->template->content = View::instance('v_posts_index');
-			$this->template->title   = "All Posts";
+			$this->template->title   = "Barking";
 	
 			# Build the query
 			$q = 'SELECT 
@@ -72,7 +73,7 @@ class posts_controller extends base_controller {
 		public function myposts() {
 			# Set up the View
 			$this->template->content = View::instance('v_posts_myposts');
-			$this->template->title   = "My Posts";
+			$this->template->title   = "My Barking";
 	
 			# Build the query
 			$q = 'SELECT 
@@ -90,6 +91,31 @@ class posts_controller extends base_controller {
 	
 			# Pass data to the View
 			$this->template->content->myposts = $userposts;
+	
+			# Render the View
+			echo $this->template;
+		}
+		
+		public function allposts() {
+			# Set up the View
+			$this->template->content = View::instance('v_posts_allposts');
+			$this->template->title   = "All The Barking";
+	
+			# Build the query
+			$q = 'SELECT 
+            posts.content,
+            posts.created,
+						users.first_name,
+            users.last_name, 
+						users.email
+        FROM posts
+				INNER JOIN users ON posts.user_id = users.user_id';
+	
+			# Run the query
+			$userallposts = DB::instance(DB_NAME)->select_rows($q);
+	
+			# Pass data to the View
+			$this->template->content->allposts = $userallposts;
 	
 			# Render the View
 			echo $this->template;
