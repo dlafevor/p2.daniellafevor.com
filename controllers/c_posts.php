@@ -5,8 +5,8 @@ class posts_controller extends base_controller {
         parent::__construct();
         # Make sure user is logged in if they want to use anything in this controller
         if(!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
-					Router::redirect("/posts/users");
+            #die("Members only. <a href='/users/login'>Login</a>");
+					Router::redirect("/users/login");
         }
     }
 
@@ -23,21 +23,29 @@ class posts_controller extends base_controller {
 
     public function p_add() {
 
-        # Associate this post with this user
-        $_POST['user_id']  = $this->user->user_id;
+			# Associate this post with this user
+			$_POST['user_id']  = $this->user->user_id;
 
-        # Unix timestamp of when this post was created / modified
-        $_POST['created']  = Time::now();
-        $_POST['modified'] = Time::now();
+			# Unix timestamp of when this post was created / modified
+			$_POST['created']  = Time::now();
+			$_POST['modified'] = Time::now();
 
-        # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('posts', $_POST);
+			# Insert
+			# Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+			DB::instance(DB_NAME)->insert('posts', $_POST);
 
-        # Quick and dirty feedback
-        Router::redirect("/posts/myposts");
-
+			# Quick and dirty feedback
+			Router::redirect("/posts/myposts");
     }
+		
+		public function delete($user_id_followed) {
+			# Delete this connection
+			$where_condition = 'WHERE post_id = '.$user_id_followed;
+			DB::instance(DB_NAME)->delete('posts', $where_condition);
+			# Send them back
+			Router::redirect("/posts/myposts");
+	}
+		
 		public function index() {
 			# Set up the View
 			$this->template->content = View::instance('v_posts_index');
@@ -77,7 +85,8 @@ class posts_controller extends base_controller {
 	
 			# Build the query
 			$q = 'SELECT 
-            posts.content,
+            posts.post_id, 
+						posts.content,
             posts.created,
 						users.first_name,
             users.last_name, 

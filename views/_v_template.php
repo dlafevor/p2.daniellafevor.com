@@ -29,7 +29,7 @@
 			<?php if($user): ?>
 				<div id="profileHeader">
 					Welcome!
-					<h1><?php echo $user->first_name; echo $user->last_name; ?></h1>
+					<h1><?php echo $user->first_name; ?> <?php echo $user->last_name; ?></h1>
 					<?php echo $user->email ?>
 				</div>
 			<?php endif; ?>
@@ -39,8 +39,8 @@
 			<?php if($user): ?>
 				<div class="leftBar">
 					<div class="controlBar">
-						<a href="/posts/myposts">Barkings</a>
-						<a href="/posts">My Pack's Barks</a>
+						<a href="/posts/myposts">My Barkings!</a>
+						<a href="/posts">My Pack's Barks!</a>
 						<a href="/posts/allposts">All Barks!</a>
 						<a href="/posts/users">Following</a>
 					</div>
