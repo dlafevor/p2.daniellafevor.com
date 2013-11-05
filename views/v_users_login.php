@@ -9,7 +9,7 @@
 		<?php endif; ?>
 		<div class="plusOnes">
 			+1 Delete A Post<br>
-			+1
+			+1 View/Edit Profile
 		</div>
 	</form>
 	<img src="/images/murphy_theBackyardBarker.png" width="191" height="344" alt="Murphy - the Backyard Barker" title="Murphy - the Backyard Barker" id="titleIcon">

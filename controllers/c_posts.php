@@ -38,9 +38,9 @@ class posts_controller extends base_controller {
 			Router::redirect("/posts/myposts");
     }
 		
-		public function delete($user_id_followed) {
+		public function delete($post_id) {
 			# Delete this connection
-			$where_condition = 'WHERE post_id = '.$user_id_followed;
+			$where_condition = 'WHERE post_id = '.$post_id;
 			DB::instance(DB_NAME)->delete('posts', $where_condition);
 			# Send them back
 			Router::redirect("/posts/myposts");

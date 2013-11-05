@@ -2,8 +2,8 @@
 /* CSS Document */
 
 body {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; background-color: #f1deb8; margin: 0 0 0 0; padding: 0 0 0 0; }
-h1 { color: #fe9200; margin: 0 0 0 0; padding: 0 0 8px 0; }
-h2 { color: #fe9200; margin: 0 0 0 0; padding: 4px 0 4px 0; }
+h1 { color: #fff; margin: 0 0 0 0; padding: 0 0 -4px 0; }
+h2 { color: #fe9200; margin: 0 0 0 0; padding: 0 0 4px 0; }
 h3 { margin: 0 0 0 0; font-size: 1em; font-weight: normal; }
 h3 strong { font-weight: bold; font-size: 1.1em; }
 
@@ -17,8 +17,12 @@ div.signupBody, div.interiorBody { position: relative; width: 900px; margin: -14
 
 div.signupBody form { margin-top: -25px; margin-left: 125px; float: right; }
 #titleIcon { float: right; margin-top: -115px; }
-input.signupBody { width: 300px; border: none; border-radius: 5px; background-color: #ffffff; color: #979797; font-size: 1.1em; padding: 4px 4px 4px 4px; margin-bottom: 10px; display: block; }
+div.userBio { font-size: .9em; color: #000 !important; float: right; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; color: #fff; width: 275px; padding: 4px; border-radius: 5px; background-image: url(../images/25_percent_background.png); background-repeat: repeat; }
+input.signupBody, textarea.signupBody { width: 300px; border: none; border-radius: 5px; background-color: #ffffff; color: #979797; font-size: 1.1em; padding: 4px 4px 4px 4px; margin-bottom: 10px; display: block; }
+textarea.signupBody { height: 175px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
 input.signupButton { color: #ffffff; background-color: #fe9200; border-radius: 5px; width: 308px; border: none; padding: 5px 5px 5px 5px; margin-top: 10px; font-size: 1.2em; }
+input.crudBTN { width: 100px !important; color: #ffffff; background-color: #fe9200; border-radius: 5px; width: 308px; border: none; padding: 5px 5px 5px 5px; margin-top: 10px; font-size: 1.2em; } 
+
 
 div.leftBar { width: 120px; float: left; margin-top: -60px; }
 img.headerLogo { margin-bottom: 10px; float:left; }
@@ -31,12 +35,13 @@ div.controlBar a:hover { background-color: #ffb44e; }
 .error { color: #F20000; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; display: block; }
 div.plusOnes { color: #fff; }
 
-#profileHeader { float: right; left: 175px; width: 650px; margin-top: -85px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 10px; }
-div.repeatedBodyContent { float: right; left: 175px; width: 650px; margin-top: -70px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 10px; }
+#profileHeader { color: #fff; float: right; left: 175px; width: 650px; margin-top: -85px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 10px; }
+#profileHeader a:link, #profileHeader a:visited { float: right; background-color: #fe9200; border-radius: 3px; color: #fff; font-size: .9em; padding: 2px 6px 2px 6px; margin-right: 5px; text-decoration: none; }
+div.repeatedBodyContent { float: right; left: 175px; width: 650px;; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 10px; }
 div.followedPosts { border-radius: 5px; background-image: url(../images/25_percent_background.png); background-repeat: repeat; padding: 5px 5px 5px 5px; margin-bottom: 10px; }
 p.postContent { margin: 0px; }
 p.dateTime { font-style: italic; text-align: right; }
 #newPostForm { padding: 6px;}
 #content { width: 500px; border-radius: 5px; padding: 3px 10px 3px 10px; }
 #newPost { background-color: #fe9200; color: #fff; border: none; border-radius: 5px; padding: 3px 20px 3px 20px; }
-a.deletePost { background-color: #fe9200; border-radius: 3px; color: #fff; font-size: .9em; padding: 2px 6px 2px 6px; margin-right: 5px; text-decoration: none; }
+a.editButtons { background-color: #fe9200; border-radius: 3px; color: #fff; font-size: .9em; padding: 2px 6px 2px 6px; margin-right: 5px; text-decoration: none; }

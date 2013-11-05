@@ -6,7 +6,7 @@
 	<?php foreach($myposts as $post): ?>
 		<div class="followedPosts">
 			<article>
-				<h3><a href="delete/<?=$post['post_id']?>" class="deletePost">X</a><strong><?=$post['first_name']?> <?=$post['last_name']?></strong> <?=$post['email']?></h3>
+				<h3><a href="delete/<?=$post['post_id']?>" class="editButtons">X</a><strong><?=$post['first_name']?> <?=$post['last_name']?></strong> <?=$post['email']?></h3>
 				<p class="postContent"><?=$post['content']?></p>
 				<p class="dateTime">
 					<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">

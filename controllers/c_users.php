@@ -37,7 +37,6 @@ class users_controller extends base_controller {
 			# Insert this user into the database
 			$user_id = DB::instance('p2_daniellafevor_com')->insert('users', $_POST);
 			
-			# For now, just confirm they've signed up - 
 			# You should eventually make a proper View for this
 			Router::redirect("/users/login");       
     }
@@ -115,15 +114,50 @@ class users_controller extends base_controller {
 	
 			Router::redirect("/users/login");
     }
+		
+		
+		public function profile($email = NULL) {
 
-    public function profile($email = NULL) {
+			if($email == NULL) {
+					echo "No user specified";
+			}
+			else {
+				# Setup view
+				$this->template->content = View::instance('v_users_profile');
+				$this->template->title   = "User Profile";
 
-        if($email == NULL) {
-            echo "No user specified";
-        }
-        else {
-            echo "This is the profile for ".$user->email;
-        }
-    }
+				# Build the query
+			$q = 'SELECT 
+            users.first_name,
+            users.last_name, 
+						users.email,
+						users.userState, 
+						users.userCity, 
+						users.userBio
+        FROM users
+        WHERE users.user_id = '.$this->user->user_id;
+	
+			# Run the query
+			$myProfile = DB::instance(DB_NAME)->select_rows($q);
+	
+			# Pass data to the View
+			$this->template->content->userProfile = $myProfile;
+
+				# Render template
+				echo $this->template;
+			}
+		}
+		public function p_profile() {
+			 # Associate this post with this user
+			$_POST['user_id']  = $this->user->user_id;
+
+			# Insert
+			# Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+			$whereClause = 'WHERE user_id = ' .$_POST['user_id'];
+			DB::instance(DB_NAME)->update('users', $_POST, $whereClause);
+
+			# Quick and dirty feedback
+			Router::redirect("/posts/myposts/");
+		}
 
 } # end of the class

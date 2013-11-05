@@ -16,7 +16,6 @@
 				<!-- Menu for users who are logged in -->
 				<?php if($user): ?>
 					<a href='/users/logout'>Logout</a>
-					<a href='/users/profile'>Profile</a>
 					<!-- Menu options for users who are not logged in -->
 				<?php else: ?>
 					<a href='/users/signup'>Sign up</a>
@@ -28,9 +27,9 @@
 		<div class="interiorBody">
 			<?php if($user): ?>
 				<div id="profileHeader">
-					Welcome!
 					<h1><?php echo $user->first_name; ?> <?php echo $user->last_name; ?></h1>
 					<?php echo $user->email ?>
+					<a href="/users/profile/<?php echo $user->user_id ?>" class="profileEdit">Edit Profile</a>
 				</div>
 			<?php endif; ?>
 			<?php if(isset($content)) echo $content; ?>
