@@ -1,4 +1,5 @@
 <div class="repeatedBodyContent">
+	<h2>All Barkers</h2>
 	<?php foreach($users as $user): ?>
 		<div class="followedPosts">
 			<!-- Print this user's name -->

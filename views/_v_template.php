@@ -26,8 +26,15 @@
 		</div>
 		<div class="signupBar"></div>
 		<div class="interiorBody">
+			<?php if($user): ?>
+				<div id="profileHeader">
+					Welcome!
+					<h1><?php echo $user->first_name; echo $user->last_name; ?></h1>
+					<?php echo $user->email ?>
+				</div>
+			<?php endif; ?>
 			<?php if(isset($content)) echo $content; ?>
-		
+				
 			<?php if(isset($client_files_body)) echo $client_files_body; ?>
 			<?php if($user): ?>
 				<div class="leftBar">

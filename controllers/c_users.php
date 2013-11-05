@@ -41,6 +41,7 @@ class users_controller extends base_controller {
 			# You should eventually make a proper View for this
 			Router::redirect("/users/login");       
     }
+		
 		public function login($error = NULL) {
 		
 				# Set up the view
