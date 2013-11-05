@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; background-color: #f1deb8; margin: 0 0 0 0; padding: 0 0 0 0; }
-h1 { color: #fff; margin: 0 0 0 0; padding: 0 0 -4px 0; }
+h1 { color: #fff; margin: 0 0 0 0; padding: 0 0 4px 0; }
 h2 { color: #fe9200; margin: 0 0 0 0; padding: 0 0 4px 0; }
 h3 { margin: 0 0 0 0; font-size: 1em; font-weight: normal; }
 h3 strong { font-weight: bold; font-size: 1.1em; }
